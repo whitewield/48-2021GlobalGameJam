@@ -2,17 +2,5 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CS_Box : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class CS_Box : CS_Item {
 }
