@@ -13,6 +13,8 @@ public class CS_GameUI : MonoBehaviour {
     [SerializeField] Text myText_Ending = null;
     [SerializeField] Image[] myTargetItems = null;
 
+    [SerializeField] AudioSource myAudioSource = null;
+
     private void Awake () {
         if (instance != null && instance != this) {
             Destroy (this.gameObject);
@@ -36,10 +38,13 @@ public class CS_GameUI : MonoBehaviour {
     }
 
     public void OnButtonRetry () {
+        myAudioSource.Play ();
         SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
     }
 
     public void OnButtonTitle () {
+
+        myAudioSource.Play ();
         SceneManager.LoadScene ("Title");
     }
 

@@ -12,6 +12,7 @@ public class CS_Item : MonoBehaviour {
     private float myFrictionMultiplier = 0.95f;
 
     private Rigidbody myRigidbody;
+    private Vector3 myStartLocalPosition;
 
     private void Start () {
         // get rigid body
@@ -19,11 +20,18 @@ public class CS_Item : MonoBehaviour {
         // make the item move with parent
         if (this.transform.parent != null) {
             myRigidbody.isKinematic = true;
+            myStartLocalPosition = this.transform.localPosition;
         }
 
         if (isTaskItem) {
             // random rotation
             this.transform.rotation = Quaternion.Euler (0, 0, Random.Range (0, 360f));
+        }
+    }
+
+    private void FixedUpdate () {
+        if (myRigidbody.isKinematic == true) {
+            this.transform.localPosition = myStartLocalPosition;
         }
     }
 

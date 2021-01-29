@@ -11,6 +11,8 @@ public class CS_Hand : MonoBehaviour {
     [SerializeField] Sprite mySprite_Hold = null;
     [SerializeField] Sprite mySprite_Release = null;
 
+    [SerializeField] AudioSource myAudioSource = null;
+
     private void Awake () {
         if (instance != null && instance != this) {
             Destroy (this.gameObject);
@@ -28,6 +30,7 @@ public class CS_Hand : MonoBehaviour {
     public void Attach (Rigidbody g_rigidbody) {
         myJoint.connectedBody = g_rigidbody;
         mySpriteRenderer.sprite = mySprite_Hold;
+        myAudioSource.Play ();
     }
 
     public void Detach () {

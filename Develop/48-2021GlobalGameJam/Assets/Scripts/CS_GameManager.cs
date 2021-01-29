@@ -21,6 +21,9 @@ public class CS_GameManager : MonoBehaviour {
     private float myTimer = 0;
     private bool isGameOver = false;
 
+    [SerializeField] AudioSource myAudioSource = null;
+    [SerializeField] ParticleSystem myParticleSystem = null;
+
     private void Awake () {
         if (instance != null && instance != this) {
             Destroy (this.gameObject);
@@ -124,6 +127,10 @@ public class CS_GameManager : MonoBehaviour {
                 // create new dialog
                 CreateTask ();
             }
+
+            myParticleSystem.transform.position = g_item.transform.position;
+            myParticleSystem.Play ();
+            myAudioSource.Play ();
         }
     }
 
