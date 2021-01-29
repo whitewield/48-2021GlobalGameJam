@@ -6,12 +6,35 @@ public class CS_Item : MonoBehaviour {
     private Vector3 myLastPosition;
 
     [SerializeField] string myName = "";
+    [SerializeField] bool isPlural = false;
     [SerializeField] bool isTaskItem = false;
     [SerializeField] SpriteRenderer mySpriteRenderer = null;
+    private float myFrictionMultiplier = 0.95f;
+
+    private Rigidbody myRigidbody;
+
+    private void Start () {
+        // get rigid body
+        myRigidbody = this.GetComponent<Rigidbody> ();
+        // make the item move with parent
+        if (this.transform.parent != null) {
+            myRigidbody.isKinematic = true;
+        }
+
+        if (isTaskItem) {
+            // random rotation
+            this.transform.rotation = Quaternion.Euler (0, 0, Random.Range (0, 360f));
+        }
+    }
 
     public void OnMouseDown () {
-        // store the initial position
-        myLastPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        // reset rigidbody
+        if (this.transform.parent != null) {
+            myRigidbody.isKinematic = false;
+        }
+
+        // attach to hand
+        CS_Hand.Instance.Attach (myRigidbody);
 
         // move item out of box
         this.transform.SetParent (null);
@@ -21,25 +44,37 @@ public class CS_Item : MonoBehaviour {
     }
 
     public void OnMouseUp () {
+        // detach to hand
+        CS_Hand.Instance.Detach ();
+
         CS_GameManager.Instance.CheckSubmit (this);
     }
 
     public void OnMouseDrag () {
-        // get current position
-        Vector3 t_currentPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-        // calculate delta
-        Vector3 t_deltaPosition = t_currentPosition - myLastPosition;
-        t_deltaPosition.z = 0;
 
-        // update my position
-        this.transform.position = this.transform.position + t_deltaPosition;
+        // add friction
+        this.myRigidbody.velocity *= myFrictionMultiplier;
 
-        // update my last position
-        myLastPosition = t_currentPosition;
+        //// get current position
+        //Vector3 t_currentPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        //// calculate delta
+        //Vector3 t_deltaPosition = t_currentPosition - myLastPosition;
+        //t_deltaPosition.z = 0;
+
+        //// update my position
+        //this.transform.Translate (t_deltaPosition, Space.World);
+        ////this.transform.position = this.transform.position + t_deltaPosition;
+
+        //// update my last position
+        //myLastPosition = t_currentPosition;
     }
 
     public string GetName () {
         return myName;
+    }
+
+    public bool CheckIsPlural () {
+        return isPlural;
     }
 
     public Sprite GetSprite () {

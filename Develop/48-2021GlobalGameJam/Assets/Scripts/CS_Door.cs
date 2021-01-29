@@ -16,6 +16,7 @@ public class CS_Door : MonoBehaviour {
     }
 
     public void OnMouseDown () {
+
         isDragging = false;
 
         // start my box mouse down function
@@ -44,6 +45,10 @@ public class CS_Door : MonoBehaviour {
     }
 
     public void OnMouseUp () {
+
+        myBox.OnMouseUp ();
+
+        Debug.Log ("OnMouseUp" + isDragging);
         if (isDragging == false) {
             Open ();
         }

@@ -11,8 +11,12 @@ public class CS_Dialog : CS_Item {
         // store target item
         myTargetItem = g_item;
 
-        // show text 
-        myTextMesh.text = "Wait, where is my " + g_item.GetName () + "?";
+        if (g_item.CheckIsPlural() == true) {
+            myTextMesh.text = "oh no! I can't find my " + g_item.GetName () + "...";
+        } else {
+            // show text 
+            myTextMesh.text = "wait... where is my " + g_item.GetName () + "?";
+        }
     }
 
     public Vector3 GetSubmitPosition () {

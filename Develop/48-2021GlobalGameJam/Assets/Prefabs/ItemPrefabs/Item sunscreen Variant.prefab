@@ -7,16 +7,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1963494629117842148, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.099059165
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963494629117842148, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99508154
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963494629117842148, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -11.37
+      objectReference: {fileID: 0}
     - target: {fileID: 1963494629117842149, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 64894ca37e459b04d8e76ee7a4095dbd,
         type: 3}
+    - target: {fileID: 1963494629873721100, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963494629873721100, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963494629873721100, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 1963494629873721101, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}
       propertyPath: m_Name
-      value: Item sunscreen
+      value: Item sunscreen Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1963494629873721102, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}

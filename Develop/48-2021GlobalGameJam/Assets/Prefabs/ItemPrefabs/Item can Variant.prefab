@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 1963494629873721101, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}
       propertyPath: m_Name
-      value: Item can
+      value: Item can Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1963494629873721102, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}

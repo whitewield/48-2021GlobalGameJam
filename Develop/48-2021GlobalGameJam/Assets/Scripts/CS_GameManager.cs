@@ -96,6 +96,10 @@ public class CS_GameManager : MonoBehaviour {
     }
 
     public void CheckSubmit (CS_Item g_item) {
+        if (myCurrentDialog == null) {
+            return;
+        }
+
         // check if its the item you are looking for
         if (myCurrentDialog.GetTarget() != g_item) {
             return;

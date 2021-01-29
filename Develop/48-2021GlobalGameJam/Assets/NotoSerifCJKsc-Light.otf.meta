@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3277eb4a25c337d4a85ff4fea0e73a34
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Noto Serif CJK SC
+  fontNames:
+  - Noto Serif CJK SC
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 743a37a20dec8ff49b784ebac7168d9e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

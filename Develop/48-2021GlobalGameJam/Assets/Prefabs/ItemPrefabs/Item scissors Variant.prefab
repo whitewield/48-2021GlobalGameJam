@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 1963494629873721101, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}
       propertyPath: m_Name
-      value: Item scissors
+      value: Item scissors Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1963494629873721102, guid: 42b9b758acb73274096a859e5472c8ef,
         type: 3}
@@ -77,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: myName
       value: scissors
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963494629873721103, guid: 42b9b758acb73274096a859e5472c8ef,
+        type: 3}
+      propertyPath: isPlural
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42b9b758acb73274096a859e5472c8ef, type: 3}
